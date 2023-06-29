@@ -15,6 +15,9 @@ public class Run {
 		
 		Exercise_Exeption excp = new Exercise_Exeption();
 //		excp.exercise1();
-		excp.exercise2();
+//		excp.exercise2();
+//		excp.exercise3();
+		excp.exercise4();
+	
 	}
 }
