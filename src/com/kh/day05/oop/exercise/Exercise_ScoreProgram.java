@@ -1,8 +1,11 @@
-package com.kh.day04.exercise;
+package com.kh.day05.oop.exercise;
 
 import java.util.Scanner;
 
 public class Exercise_ScoreProgram {
+	static int kor = 0;
+	static int eng = 0;
+	static int math = 0;
 	public static void main(String [] args)
 	{
 //		====== 메인 메뉴 ======
@@ -73,38 +76,21 @@ public class Exercise_ScoreProgram {
 //		}
 		
 //		======================= for / if 로 바꿔서 해보기 =======================
-		int kor = 0;
-		int eng = 0;
-		int math = 0;
+		
 		//finish : 
 		for(;;) {
-			System.out.println("===== 메인 메뉴 =====");
-			System.out.println("1. 성적입력");
-			System.out.println("2. 성적출력");
-			System.out.println("3. 종료");
-			System.out.print("선택 : ");
 			Scanner sc = new Scanner(System.in);
+			printMenu();  // ctrl + 클릭 하면 해당 메소드 확인 가능 
 			int choice = sc.nextInt();
 			if(choice == 1) {
-				System.out.println("===== 성적 입력 =====");
-				System.out.print("국어 : ");
-				kor = sc.nextInt();
-				System.out.print("영어 : ");
-				eng = sc.nextInt();
-				System.out.print("수학 : ");
-				math = sc.nextInt();
+				inputScore();
 			} else if(choice == 2) {
-				System.out.println("===== 성적 출력 =====");
-				System.out.printf("국어 : %d\n", kor);
-				System.out.printf("영어 : %d\n", eng);
-				System.out.printf("수학 : %d\n", math);
-				System.out.printf("총점 : %d\n", (kor+eng+math));
-				System.out.printf("평균 : %.2f\n", (double)(kor+eng+math)/3);
+				printScore();
 			} else if(choice == 3) {
-				System.out.println("프로그램이 종료되었습니다."); 
+				showGoodBye(); 
 				break; //finish;
 			} else {
-				System.out.println("잘못입력하셨습니다. 메뉴를 선택해주세요.");
+				printException();
 			}
 		}
 			
@@ -112,4 +98,43 @@ public class Exercise_ScoreProgram {
 			
 			
 	}
+
+	public static void printMenu() {  // alt + ← 누르면 사용되고 있는 곳 확인 가능 
+		System.out.println("===== 메인 메뉴 =====");
+		System.out.println("1. 성적입력");
+		System.out.println("2. 성적출력");
+		System.out.println("3. 종료");
+		System.out.print("선택 : ");
+	}
+	
+	public static void inputScore() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("===== 성적 입력 =====");
+		System.out.print("국어 : ");
+		kor = sc.nextInt();
+		System.out.print("영어 : ");
+		eng = sc.nextInt();
+		System.out.print("수학 : ");
+		math = sc.nextInt();
+	}
+	
+	public static void printScore() {
+		System.out.println("===== 성적 출력 =====");
+		System.out.printf("국어 : %d\n", kor);
+		System.out.printf("영어 : %d\n", eng);
+		System.out.printf("수학 : %d\n", math);
+		System.out.printf("총점 : %d\n", (kor+eng+math));
+		System.out.printf("평균 : %.2f\n", (double)(kor+eng+math)/3);
+	}
+	
+	public static void showGoodBye() {
+		System.out.println("프로그램이 종료되었습니다."); 
+	}
+
+	public static void printException() {
+		System.out.println("잘못입력하셨습니다. 메뉴를 선택해주세요.");
+	}
+	
+	
+
 }
