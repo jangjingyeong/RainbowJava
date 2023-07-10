@@ -1,0 +1,8 @@
+algorithm
+programming
+jquery
+javascript
+cookie
+$.cookie('','', {expires:7,path:'/'});
+console.log($.removeCookie('dogid');
+exit
