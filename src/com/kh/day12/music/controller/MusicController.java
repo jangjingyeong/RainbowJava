@@ -92,12 +92,34 @@ public class MusicController {
 	
 	public void insertionSortByTitleASC() {
 		// 삽입정렬 연습 
-		
+		for(int i = 1; i < mList.size(); i++) {
+			for(int j = 1; j > 0; j--) {
+				Music mOne = mList.get(j-1);
+				Music mTwo = mList.get(j);
+				if(mOne.getTitle().compareTo(mTwo.getTitle()) > 0) {
+//					Music temp = mOne;
+//					mOne.set(j-1, mTwo);
+//					mTwo.set(j, temp);
+				}
+			}
+		}
 	}
 	
 	public void selectionSortByTitleASC() {
-		// 선택정렬 연습 
-		
+//		// 선택정렬 연습 
+//		for(int i = 0; i < mList.size()-1; i++) {
+//			int min = i;
+//			for(int j= i+1; j < mList.size(); j++) {
+//				Music mOne = mList.get(j);
+//				Music mTwo = mList.get(j+1);
+//				if(mOne.getTitle().compareTo(mTwo.getTitle()) > 0) {
+//					min = j;
+//				}
+//			}
+//			Music temp = mOne;
+//			mOne.set(j, mTwo);
+//			mTwo.set(j+1, temp);
+//		}
 	}
 	
 
